@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Refurb Laptops Co. - Premium Refurbished Technology</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="bg-overlay"></div>
+
+  <div class="modal-overlay" id="loginModal">
+    <div class="modal-content">
+      <h2>Admin Login</h2>
+      <input type="password" id="adminCode" placeholder="Enter admin code" />
+      <button id="loginBtn">Submit</button>
+    </div>
+  </div>
+
+  <div id="mainContent">
+    <header>
+      <nav>
+        <div class="logo" id="logo">Sky Tech</div>
+        <ul>
+          <li><a href="#slider">Home</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="slider" id="slider">
+      <div class="slides">
+        <div class="slide"
+          style="background: url('https://images.unsplash.com/photo-1518770660439-4636190af475') center/cover;">
+          <div class="slide-content">
+            <h1>Premium Refurbished</h1>
+            <p>Discover high-performance laptops at unbeatable prices. Quality guaranteed, performance delivered.</p>
+          </div>
+        </div>
+        <div class="slide"
+          style="background: url('https://images.unsplash.com/photo-1517336714731-489689fd1ca8') center/cover;">
+          <div class="slide-content">
+            <h1>Desktop Solutions</h1>
+            <p>Powerful desktop systems for professionals and enthusiasts. Tested, upgraded, and ready to perform.</p>
+          </div>
+        </div>
+        <div class="slide"
+          style="background: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c') center/cover;">
+          <div class="slide-content">
+            <h1>Quality Components</h1>
+            <p>Upgrade your system with our certified components. Memory, storage, and more at competitive prices.</p>
+          </div>
+        </div>
+      </div>
+      <div class="controls">
+        <span id="prev">‹</span>
+        <span id="next">›</span>
+      </div>
+      <div class="indicators">
+        <div class="indicator active"></div>
+        <div class="indicator"></div>
+        <div class="indicator"></div>
+      </div>
+    </div>
+
+    <div class="categories fade-in">
+      <button class="active" data-cat="all">All Products</button>
+      <button data-cat="laptop">Laptops</button>
+      <button data-cat="desktop">Desktops</button>
+      <button data-cat="servers">servers</button>
+      <button data-cat="components">Components</button>
+    </div>
+
+    <section id="products" class="fade-in">
+      <div class="product-grid" id="productGrid">
+        <!-- Products will be loaded here dynamically -->
+      </div>
+    </section>
+
+    <div id="mainContent">
+    </div>
+    
+    <section id="contact" class="fade-in">
+      <h2>Get In Touch</h2>
+      <p>Ready to upgrade your technology? Contact us for personalized recommendations and support.</p>
+      <div class="contact-info">
+        <div class="contact-item">
+          <strong>Address</strong>
+          <p>Ahmedabad, Gujarat, India</p>
+        </div>
+        <div class="contact-item">
+          <strong>Phone</strong>
+          <p>+91 9879911505</p>
+        </div>
+        <div class="contact-item">
+          <strong>Email</strong>
+          <p><a href="mailto:info@refurblaptops.com">narendrasadariya1011@gmail.com</a></p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>2018 © All rights Reseverd by Sky Tech.</p>
+    </footer>
+  </div>
+
+  <div class="admin-page" id="adminPage">
+    <h1>Admin Dashboard</h1>
+
+    <div class="admin-controls">
+      <button id="addProductBtn">Add New Product</button>
+      <button id="viewProductsBtn">View All Products</button>
+      <button id="logoutBtn">Logout</button>
+    </div>
+
+    <div class="admin-form" id="productForm">
+      <h2>Add/Edit Product</h2>
+      <form id="productFormElement">
+        <input type="hidden" id="productId">
+        <label for="productsName">Product Name</label>
+        <input type="text" id="productsName" required>
+
+        <label for="productCategory">Category</label>
+        <select id="productCategory" required>
+          <option value="">Select Category</option>
+          <option value="laptop">Laptop</option>
+          <option value="desktop">Desktop</option>
+          <option value="components">Component</option>
+          <option value="servers">servers</option>
+        </select>
+
+        <label for="productImage">Image URL</label>
+        <input type="text" id="productImage" required>
+
+        <label for="highlight">Highlight</label>
+        <input type="text" id="highlight" required>
+
+        <label for="productSpecs">Specifications</label>
+        <textarea id="productSpecs" required></textarea>
+
+        <label for="productPrice">Price (₹)</label>
+        <input type="number" id="productPrice" required>
+
+        <div class="form-actions">
+          <button type="button" id="cancelFormBtn">Cancel</button>
+          <button type="submit" id="saveProductBtn">Save Product</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="admin-table-container" id="productsTableContainer">
+      <table class="admin-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="productsTableBody">
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
