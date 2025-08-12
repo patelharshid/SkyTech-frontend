@@ -91,7 +91,8 @@ async function updateProduct(id, product) {
         category: product.category,
         image: product.image,
         specs: product.specs,
-        price: product.price
+        price: product.price,
+        highlight : product.highlight
       })
     });
     if (!response.ok) throw new Error('Failed to update product');
@@ -625,7 +626,6 @@ async function saveProduct(e) {
   const category = document.getElementById('productCategory').value;
   const image = document.getElementById('productImage').value;
   const specs = document.getElementById('productSpecs').value;
-  const price = parseFloat(document.getElementById('productPrice').value);
   const highlight = document.getElementById('highlight').value;
 
   const productData = { name, category, image, specs, price , highlight};
