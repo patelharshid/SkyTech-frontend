@@ -591,6 +591,7 @@ async function editProduct(id) {
   document.getElementById('productImage').value = product.image;
   document.getElementById('productSpecs').value = product.specs;
   document.getElementById('productPrice').value = product.price;
+  document.getElementById('highlight').value = product.highlight; 
 
   productForm.style.display = 'block';
   productsTableContainer.style.display = 'none';
@@ -627,6 +628,7 @@ async function saveProduct(e) {
   const image = document.getElementById('productImage').value;
   const specs = document.getElementById('productSpecs').value;
   const highlight = document.getElementById('highlight').value;
+  const price = parseFloat(document.getElementById('productPrice').value);
 
   const productData = { name, category, image, specs, price , highlight};
 
